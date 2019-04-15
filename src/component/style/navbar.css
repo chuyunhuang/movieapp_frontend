@@ -1,0 +1,30 @@
+.navbar-wrapper{
+  border-bottom: 1px solid black;
+  padding: 20px;
+  text-decoration: none;
+  display: flex;
+}
+
+.nav-header{
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  padding-left: 10px;
+  width: 50%;
+  text-decoration: none;
+
+}
+
+.nav-item{
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  text-align: right;
+  width: 20%;
+  text-decoration: none
+}
+
+.nav-item:hover{
+  color: red;
+  /* text-decoration: underline red; */
+}

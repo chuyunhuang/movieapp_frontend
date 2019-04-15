@@ -1,0 +1,42 @@
+.entire-page-wrapper{
+  height: 90vh ;
+  /* background-color: black; */
+}
+
+.header{
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  padding-top: 5px;
+}
+/* MOVIE WRAPPER AND CARD */
+.movie-card-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.single-movie-card{
+  width: 20%;
+  padding: 20px;
+  /* border:1px solid black; */
+}
+
+.title{
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center
+}
+
+.poster{
+  width: 100%;
+}
+
+/* SEARCH */
+.input-wrapper{
+  display: flex;
+  justify-content: center;
+  padding:20px;
+  font-size: 20px;
+}
+

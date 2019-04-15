@@ -1,0 +1,13 @@
+.homepage-wrapper{
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+.welcome{
+  color: white;
+  text-align: center;
+  font-size: 60px;
+  padding: 30px;
+  padding-top: 200px;
+}
