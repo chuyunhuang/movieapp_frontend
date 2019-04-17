@@ -10,10 +10,21 @@ class SearchByTitle extends React.Component{
     this.state={
       query: '', 
       movie: [],
+      searchedMovie: [],
       error: '', 
     }
   }
 
+  componentDidMount(){
+    axios({
+      url: 'http://localhost:4200/movie', 
+      method: 'get'
+    })
+    .then((data)=>{
+      this.setState({movie: data.data})
+    })
+
+  }
 
   handleChange = (e)=>{
     this.setState({
@@ -22,22 +33,24 @@ class SearchByTitle extends React.Component{
   }
 
   
-  handleClick = () =>{
-    axios({
-      url: `http://localhost:4200/movie/${this.state.query}`, 
-      method: 'get'
-    }) 
-    .then((data)=>{
-      this.setState({
-        movie: data.data,
-      })
+  handleClick = (e) =>{
+    e.preventDefault()
+
+    const filtered = this.state.movie.filter((e)=>{
+      const isTrue = e.title.toLowerCase().includes(this.state.query.toLowerCase())
+      if (isTrue){
+        console.log(e)
+        return e
+      }
     })
-    
-  }
+    this.setState({
+      searchedMovie: filtered
+    })
+  } 
 
 
   render(){
-    console.log('inside render', this.state)
+    
     return(
     <>
     <div className="input-wrapper">
@@ -46,9 +59,10 @@ class SearchByTitle extends React.Component{
     </div>
     <div className="movie-card-wrapper">
         {
-          this.state.movie.map((e, i)=>{
+          this.state.searchedMovie.map((e, i)=>{
             return (
               <div className="single-movie-card" key={i} style={{backgroundColor: 'black', color:'white'}}>
+                
                 <MovieCard 
                 title = {e.title} 
                 image ={e.image_url}

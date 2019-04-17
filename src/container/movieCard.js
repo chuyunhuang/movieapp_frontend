@@ -1,13 +1,16 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
-const MovieCard = (props) =>{
+const MovieCard = ({id, title, image, genre, star}) =>{
   return (
-    <>
-      <div className='title'>{props.title}</div>
-      <img className='poster' src={props.image} style={{height: '300px'}} alt=''/>
-      <div className="text">Genre: {props.genre}</div>
-      <div className="text">Rating: {props.star}</div>
-    </>
+  
+    <Link to={`/movie/${id}`} style={{textDecoration: 'none', color: 'black'}} >
+      <div className='title'>{title}</div>
+      <img className='poster' src={image} style={{height: '300px'}} alt=''/>
+      <div className="text">Genre: {genre}</div>
+      <div className="text">Rating: {star}</div>
+    </Link>
+
   )
 }
 

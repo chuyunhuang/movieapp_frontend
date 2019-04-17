@@ -1,0 +1,30 @@
+.entire-page{
+  width: 100%;
+  padding: 30px;
+}
+
+.movie-info{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.info-item{
+  text-align: center;
+  width: 100%;
+}
+
+.rating-input{
+  display: flex;
+  flex-direction: column;
+}
+
+.rating{
+  display: flex;
+  
+}
+
+.comment{
+  display: flex;
+}
